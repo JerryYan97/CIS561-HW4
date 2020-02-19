@@ -42,7 +42,7 @@ void Scene::CreateTestScene()
     //Area light
     //Figure in front of light
 
-    auto matteWhite = std::make_shared<MatteMaterial>(Color3f(0.725, 0.71, 0.68), 0, nullptr, nullptr);
+    auto matteWhite = std::make_shared<MatteMaterial>(Color3f(0.725, 0.71, 0.68), 30.f, nullptr, nullptr);
     auto matteRed = std::make_shared<MatteMaterial>(Color3f(0.63, 0.065, 0.05), 0, nullptr, nullptr);
     auto matteGreen = std::make_shared<MatteMaterial>(Color3f(0.14, 0.45, 0.091), 0, nullptr, nullptr);
 

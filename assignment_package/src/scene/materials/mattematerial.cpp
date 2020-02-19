@@ -1,6 +1,6 @@
 #include "mattematerial.h"
 #include "lambertbrdf.h"
-
+#include "orennayar.h"
 void MatteMaterial::ProduceBSDF(Intersection *isect) const
 {
     // Important! Must initialize the intersection's BSDF!
@@ -26,4 +26,8 @@ void MatteMaterial::ProduceBSDF(Intersection *isect) const
         bsdf->Add(new LambertBRDF(color));
     }
     //Else do Oren-Nayar (not required implementation)
+    else
+    {
+        bsdf->Add(new OrenNayar(color, sigma));
+    }
 }
