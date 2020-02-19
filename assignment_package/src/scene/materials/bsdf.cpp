@@ -181,8 +181,8 @@ Color3f BxDF::Sample_f(const Vector3f &wo, Vector3f *wi, const Point2f &xi,
 {
     //TODO
     // Cosine-sample the hemisphere, flipping the diection if necessary.
-    // *wi = WarpFunctions::squareToHemisphereCosine(xi);
-    *wi = WarpFunctions::squareToHemisphereUniform(xi);
+    *wi = WarpFunctions::squareToHemisphereCosine(xi);
+    // *wi = WarpFunctions::squareToHemisphereUniform(xi);
     if(wo.z < 0)
     {
         wi->z *= -1;
@@ -196,9 +196,9 @@ Color3f BxDF::Sample_f(const Vector3f &wo, Vector3f *wi, const Point2f &xi,
 float BxDF::Pdf(const Vector3f &wo, const Vector3f &wi) const
 {
     // Square to hemisphere cosine PDF:
-    // return wi.z * InvPi;
+    return wi.z * InvPi;
     // Square to hemisphere uniform PDF:
-    return SameHemisphere(wo, wi) ? Inv2Pi : 0;
+    // return SameHemisphere(wo, wi) ? Inv2Pi : 0;
 }
 
 BSDF::~BSDF()
