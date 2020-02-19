@@ -19,3 +19,7 @@ One Recurison, Uniform:
 Five Recurison, Uniform:
 ------------
 ![](./RenderedResult/fiveRecurisonUniform.png)
+
+1000 samples:
+------------
+![](./RenderedResult/1000samples.png)
