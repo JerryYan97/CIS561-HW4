@@ -35,7 +35,8 @@ SOURCES += \
     $$PWD/scene/geometry/primitive.cpp \
     $$PWD/scene/lights/light.cpp \
     $$PWD/scene/lights/diffusearealight.cpp \
-    $$PWD/integrators/naiveintegrator.cpp
+    $$PWD/integrators/naiveintegrator.cpp \
+    $$PWD/scene/materials/orennayar.cpp
 
 HEADERS += \
     $$PWD/mainwindow.h \
@@ -72,4 +73,5 @@ HEADERS += \
     $$PWD/warpfunctions.h \
     $$PWD/scene/lights/light.h \
     $$PWD/scene/lights/diffusearealight.h \
-    $$PWD/integrators/naiveintegrator.h
+    $$PWD/integrators/naiveintegrator.h \
+    $$PWD/scene/materials/orennayar.h

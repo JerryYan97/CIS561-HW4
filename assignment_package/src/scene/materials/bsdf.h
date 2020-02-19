@@ -8,8 +8,14 @@ inline bool SameHemisphere(const Vector3f &w, const Vector3f &wp) {
     return w.z * wp.z > 0;
 }
 inline float CosTheta(const Vector3f &w) { return w.z; }
+inline float Cos2Theta(const Vector3f &w) { return w.z * w.z; }
 inline float AbsCosTheta(const Vector3f &w) { return std::abs(w.z); }
-
+inline float Sin2Theta(const Vector3f &w) { return std::max(0.f, 1.f - Cos2Theta(w)); }
+inline float SinTheta(const Vector3f &w){ return std::sqrt(Sin2Theta(w)); }
+inline float TanTheta(const Vector3f &w){ return SinTheta(w) / CosTheta(w); }
+inline float Tan2Theta(const Vector3f &w){ return Sin2Theta(w) / Cos2Theta(w); }
+inline float CosPhi(const Vector3f &w) { float sinTheta = SinTheta(w); return (sinTheta == 0) ? 1 : glm::clamp(w.x / sinTheta, -1.f, 1.f); }
+inline float SinPhi(const Vector3f &w) { float sinTheta = SinTheta(w); return (sinTheta == 0) ? 0 : glm::clamp(w.y / sinTheta, -1.f, 1.f); }
 
 enum BxDFType {
     BSDF_REFLECTION = 1 << 0,   // This BxDF handles rays that are reflected off surfaces

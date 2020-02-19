@@ -1,5 +1,9 @@
 Jiarui Yan(jiaruiya) HW4 Test Result:
 ======================
+Extra Credit, Oren-Nayar
+-------------
+![](./RenderedResult/OrenNayar.png)
+
 One Recurison, Cosine Weighted:
 -------------
 ![](./RenderedResult/oneRecurisonCosineWeighted.png)
